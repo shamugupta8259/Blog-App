@@ -5,10 +5,13 @@ import { useLocation } from "react-router-dom";
 import DashSidebar from "../Components/DashSidebar";
 import DashProfile from "../Components/DashProfile";
 import DashPost from "../Components/DashPost";
+import DashUsers from "../Components/DashUsers";
+import DashComment from "../Components/DashComment";
+import DashboardComp from "../Components/DashboardComp";
 
 const Dashboard = () => {
 	const location = useLocation();
-	console.log(location);
+
 	const [tab, setTab] = useState("");
 	useEffect(() => {
 		const urlParams = new URLSearchParams(location.search);
@@ -26,6 +29,9 @@ const Dashboard = () => {
 			{tab === "profile" && <DashProfile />}
 			{/* profile  */}
 			{tab === "posts" && <DashPost />}
+			{tab === "users" && <DashUsers />}
+			{tab === "comments" && <DashComment />}
+			{tab === "dash" && <DashboardComp />}
 		</div>
 	);
 };
